@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p id="objectDemo"></p>
+
+    <script>
+        var student = { firsName: "bekir", lastName: "geriş", age: 22 };
+        student.age = 23;
+        var isActive = true;
+        if (isActive) {
+            document.getElementById("objectDemo").innerHTML = student.firsName + " " + student.age;
+        }
+    </script>
+</body>
+</html>
