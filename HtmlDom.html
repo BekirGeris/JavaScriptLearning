@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        .intro1 {
+            background-color: red;
+        }
+
+        .intro2 {
+            background-color: violet;
+        }
+
+        .intro3 {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="intro1" id="intro1">My first paragraph...</p>
+    <p class="intro2" id="intro2">My second paragraph...</p>
+    <p class="intro3" id="intro3">My third paragraph...</p>
+
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+    </ul>
+
+    <p id="message"></p>
+    <input name="customerName" type="text" value="Bekir GERİŞ" />
+
+    <h1>Try it</h1>
+    <h1 id="tryIt">Try it</h1>
+
+    <p id="nodes">
+        Node value
+    </p>
+
+    <div id="div1">
+        <p id="p1">
+            This is p1
+        </p>
+        <p id="p2">
+            This is p2
+        </p>
+    </div>
+
+    <script type="text/javascript">
+
+        //getElementById()
+        var firsParagraph = document.getElementById("intro1");
+        var message = document.getElementById("message");
+        message.innerHTML = "Message: " firsParagraph.innerHTML;
+
+
+        //getElementByTagName()
+        var allUnorderedList = document.getElementsByTagName("ul");
+        var unorderList = allUnorderedList[0];
+        var allListItems = unorderList.getElementsByTagName("li");
+        for (var i = 0; i < allListItems.length; i++) {
+            alert(allListItems[i].firstChild.data);
+        }
+
+
+        //getElementByClassName
+        var getElementWithClassName = document.getElementsByClassName("intro1");
+        alert(getElementWithClassName[0].innerHTML);
+
+
+        //querySelectorAll()
+        var allItemWithSelector = document.querySelectorAll("p.intro2");
+        alert(allItemWithSelector[0].innerHTML);
+
+
+        //getElementsByName()
+        var names = document.getElementsByName("customerName");
+        alert(names[0].value);
+
+        //addEventListener()
+        document.getElementById("tryIt").addEventListener("click", changeColor);
+        function changeColor() {
+            document.getElementById("intro1").style.backgroundColor = "blue";
+        }
+
+
+        //removeEventListener()
+        document.getElementById("tryIt").removeEventListener("click");
+
+
+        var nodeText = document.getElementById("nodes").childNodes[0].nodeValue;
+        alert(nodeText);
+
+        var heading = document.createElement("h2");
+        var node = document.createTextNode("Hello JavaScript");
+        heading.appendChild(node);
+
+        var div1 = document.getElementById("div1");
+        var p2 = document.getElementById("p2");
+        div1.insertBefore(heading, p2);
+
+        alert("removing p2");
+        div1.removeChild(p2);
+
+
+        alert("Replacing");
+        var heading2 = document.createElement("h1");
+        var node2 = document.createTextNode("This is a replacement");
+        heading2.appendChild(node2);
+
+        var p1 = document.getElementById("p1");
+        div1.replaceChild(heading2, p1);
+
+    </script>
+
+</body>
+</html>

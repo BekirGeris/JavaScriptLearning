@@ -16,7 +16,7 @@
             var message = document.getElementById("message");
 
             if (textEntered.checkValidity() == false) {
-                document.getElementById("message").innerHTML = textEntered.validationMessage;
+                message.innerHTML = textEntered.validationMessage;
             } else {
                 message.innerHTML = "Input Ok";
             }
