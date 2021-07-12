@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Enter a text</p>
+    <input id="textBox" type="text" pattern="[A-Za-z]{3}" maxlength="3"/>
+    <button onclick="validate()">Send</button>
+    <p id="message"></p>
+    <script>
+        function validate() {
+            var textEntered = document.getElementById("textBox");
+            var message = document.getElementById("message");
+
+            if (textEntered.checkValidity() == false) {
+                document.getElementById("message").innerHTML = textEntered.validationMessage;
+            } else {
+                message.innerHTML = "Input Ok";
+            }
+
+            textEntered.value = "";
+        }
+    </script>
+
+</body>
+</html>
