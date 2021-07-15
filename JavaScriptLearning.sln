@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F88804D5-17A7-4388-9F04-7D687CAE8265}"
 	ProjectSection(SolutionItems) = preProject
 		Arrays.html = Arrays.html
+		Classes.js = Classes.js
 		Closures.html = Closures.html
 		Closures.js = Closures.js
 		dynamicTyping.js = dynamicTyping.js
